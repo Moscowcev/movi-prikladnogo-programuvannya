@@ -3,7 +3,7 @@ require 'open-uri'
 require 'csv'
 
 html = URI.open('https://www.hospitalsafetygrade.org/all-hospitals')
-parsed = Nokogiri::HTML.parse(html1)
+parsed = Nokogiri::HTML.parse(html)
 id = 0
 CSV.open("hospitals.csv", "a") do |csv|
   parsed.at_css('.column1').css('a').each do |link|
